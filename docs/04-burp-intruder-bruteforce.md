@@ -97,16 +97,22 @@ $ python bruteforce_login.py --email ben@fitnesshub.test
 The full transcript is saved at
 [`../evidence/bruteforce_run_output.txt`](../evidence/bruteforce_run_output.txt).
 
-## 6. Where screenshots go
+## 6. Evidence (notes, with screenshots optional)
 
-Capture these four screenshots from your own Burp session and drop them in
-`evidence/` using the names in
-[`../evidence/README.md`](../evidence/README.md):
+The deliverable is "screenshot/**notes**", and the written notes plus raw HTTP
+captures fully document the attack:
 
-1. `01-proxy-listener.png` — listener running on `127.0.0.1:8080`.
-2. `02-login-intercepted.png` — the paused `POST /api/login` in Intercept.
-3. `03-intruder-positions.png` — the `§password§` position + payload list.
-4. `04-intruder-results.png` — results sorted by status, the `200` highlighted.
+- [`../evidence/bruteforce_notes.md`](../evidence/bruteforce_notes.md) — written
+  notes: setup, the status/length signal, result, and the finding.
+- [`../evidence/bruteforce_http_capture.txt`](../evidence/bruteforce_http_capture.txt)
+  — raw request/response pairs showing `401`/length 31 (miss) vs `200`/length 95 (hit).
+- [`../evidence/bruteforce_run_output.txt`](../evidence/bruteforce_run_output.txt)
+  — full brute-force transcript.
+
+Screenshots are **optional**. If you run Burp's GUI yourself and want to add
+them, the suggested filenames (`01-proxy-listener.png`, `02-login-intercepted.png`,
+`03-intruder-positions.png`, `04-intruder-results.png`) are listed in
+[`../evidence/README.md`](../evidence/README.md).
 
 ## 7. Finding & remediation summary
 

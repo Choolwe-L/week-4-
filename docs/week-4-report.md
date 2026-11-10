@@ -75,9 +75,10 @@ changing the URL in Repeater — authentication without authorization.
 
 - ✅ Documented Burp Suite setup & proxy configuration — `docs/01`, `docs/02`.
 - ✅ Interception & analysis notes — `docs/03`.
-- ✅ Brute-force notes + reproducible evidence — `docs/04`,
-  `evidence/bruteforce_run_output.txt`, `scripts/bruteforce_login.py`.
-- ✅ Screenshot placeholders & naming guide — `evidence/README.md`.
+- ✅ Brute-force attempt notes (the "screenshot/notes" deliverable) —
+  `evidence/bruteforce_notes.md`, `evidence/bruteforce_http_capture.txt`,
+  `evidence/bruteforce_run_output.txt`, `docs/04`, `scripts/bruteforce_login.py`.
+  (Burp GUI screenshots optional; naming guide in `evidence/README.md`.)
 - ✅ Local practice target — `app/fitness_api.py`.
 
 ## 8. Next week (Week 5 preview)
